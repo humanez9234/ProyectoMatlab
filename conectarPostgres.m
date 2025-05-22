@@ -2,11 +2,11 @@ function conn = conectarPostgres()
     % CONECTARPOSTGRES Conecta a la base de datos PostgreSQL y devuelve la conexión.
     
     % Configuración de conexión
-    dbname = 'poblacion';        % Nombre de tu base de datos
-    usuario = 'postgres';        % Usuario de PostgreSQL
-    contrasena = '12345';% <-- REEMPLAZA esto por tu contraseña
-    servidor = 'localhost';      % O IP si es remoto
-    puerto = 5432;               % Puerto por defecto de PostgreSQL
+    dbname = 'poblacion';        
+    usuario = 'postgres';        
+    contrasena = '12345';
+    servidor = 'localhost';      
+    puerto = 5432;               
 
     % Crear conexión
     conn = database(dbname, usuario, contrasena, ...
