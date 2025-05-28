@@ -2,7 +2,7 @@ function conn = conectarPostgres()
     % CONECTARPOSTGRES Conecta a la base de datos PostgreSQL y devuelve la conexión.
     
     % Configuración de conexión
-    dbname = 'poblacion';        
+    dbname = 'Inventario';        
     usuario = 'postgres';        
     contrasena = '12345';
     servidor = 'localhost';      
