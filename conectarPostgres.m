@@ -13,6 +13,7 @@ function conn = conectarPostgres()
         'Vendor', 'PostgreSQL', ...
         'Server', servidor, ...
         'PortNumber', puerto);
+    
 
     % Verificar conexión
     if isopen(conn)
