@@ -1,6 +1,6 @@
 function conn = conectarPostgres()
     % Conecta a la base de datos PostgreSQL y devuelve la conexión.
-    jdbcDriverPath = 'C:\Users\alexa\Documents\Métodos numéricos\Proyecto Final\ProyectoMatlab\postgresql-42.7.6.jar';
+    jdbcDriverPath = 'C:\Users\Leonel\OneDrive\Escritorio\Proyecto final Matlab\ProyectoMatlab\postgresql-42.7.6.jar';
 
     % Agrega el driver al classpath de Java
     javaaddpath(jdbcDriverPath);
