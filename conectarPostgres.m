@@ -1,24 +1,31 @@
 function conn = conectarPostgres()
-    % CONECTARPOSTGRES Conecta a la base de datos PostgreSQL y devuelve la conexión.
-    
+    % Conecta a la base de datos PostgreSQL y devuelve la conexión.
+    jdbcDriverPath = 'C:\Users\alexa\Documents\Métodos numéricos\Proyecto Final\ProyectoMatlab\postgresql-42.7.6.jar';
+
+    % Agrega el driver al classpath de Java
+    javaaddpath(jdbcDriverPath);
     % Configuración de conexión
-    dbname = 'Inventario';        
-    usuario = 'postgres';        
-    contrasena = '12345';
-    servidor = 'localhost';      
-    puerto = 5432;               
+    dbname = 'gestion_inventario';        
+    username = 'postgres';        
+    password = 'alpha$25';
+    server = '34.46.26.173';      
+    port = 5432;               
 
-    % Crear conexión
-    conn = database(dbname, usuario, contrasena, ...
-        'Vendor', 'PostgreSQL', ...
-        'Server', servidor, ...
-        'PortNumber', puerto);
-    
+     % Intentar conexión
+    try
+        conn = database(dbname, username, password, ...
+            'Vendor', 'PostgreSQL', ...
+            'Server', server, ...
+            'PortNumber', port);
+        
+        if isopen(conn)
+            fprintf('Se conectó correctamente "%s"\n', dbname);
+            close(conn);  % Cerramos la conexión
+        else
+            fprintf('Falló al conectar por: %s\n', conn.Message);
+        end
 
-    % Verificar conexión
-    if isopen(conn)
-        disp('✅ Conexión exitosa a PostgreSQL');
-    else
-        error('❌ Error al conectar a PostgreSQL: %s', conn.Message);
+    catch ME
+        fprintf('Excepción: %s\n', ME.message);
     end
 end
