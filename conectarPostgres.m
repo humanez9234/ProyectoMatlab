@@ -22,3 +22,4 @@ function conn = conectarPostgres()
         error('❌ Error al conectar a PostgreSQL: %s', conn.Message);
     end
 end
+
