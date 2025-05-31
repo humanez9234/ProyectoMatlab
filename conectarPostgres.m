@@ -13,6 +13,7 @@ function conn = conectarPostgres()
         'Vendor', 'PostgreSQL', ...
         'Server', servidor, ...
         'PortNumber', puerto);
+    
 
     % Verificar conexión
     if isopen(conn)
@@ -21,3 +22,4 @@ function conn = conectarPostgres()
         error('❌ Error al conectar a PostgreSQL: %s', conn.Message);
     end
 end
+
